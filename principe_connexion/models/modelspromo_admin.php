@@ -10,7 +10,7 @@ class Modelpromo_admin{
     }
 
     public function connexionad($nom, $ecole, $mot_de_passe){
-        $sql = Database::$db->prepare("INSERT INTO user(nom,ecole, mot_de_passe) VALUES (:nom,:ecole,:mot_de_passe)");
+        $sql = Database::$db->prepare("INSERT INTO promotions(nom,ecole, mot_de_passe) VALUES (:nom,:ecole,:mot_de_passe)");
         $sql->bindParam(':nom',$nom);
         $sql->bindParam(':ecole',$ecole);
         $sql->bindParam(':mot_de_passe',$mot_de_passe);

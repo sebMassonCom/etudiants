@@ -13,6 +13,8 @@ class Promo_etudiant{
     }
 
     public function connexionetudiant(Etudiant $etudiant){
+        // param : ecole + promo + pass non hashé
         $this->_model->espaceecole($etudiant->get_ecole(),$etudiant->get_mot_de_passe());
     }
+
 }

@@ -4,18 +4,24 @@ class Admin{
 
     private $_nom;
     private $_ecole;
+    private $_promotion;
     private $_mot_de_passe;
  
     
 
-    public function __construct($nom,$ecole,$mot_de_passe){
-        $this->set_nom($nom);
-        $this->set_ecole($ecole);
-        $this->set_mot_de_passe($mot_de_passe);
+    public function __construct($n,$e,$p,$mdp){
+        $this->set_nom($n);
+        $this->set_promotion($p);
+        $this->set_ecole($e);
+        $this->set_mot_de_passe($mdp);
     }
 
     public function get_nom(){
         return $this->_nom;
+    }
+
+    public function get_promotion(){
+        return $this->_promotion;
     }
 
     public function get_ecole(){
@@ -26,15 +32,20 @@ class Admin{
         return $this->_mot_de_passe;
     }
 
-    public function set_ecole($ecole){
-        $this->_ecole = $ecole;
+
+    public function set_ecole($e){
+        $this->_ecole = $e;
     }
 
-    public function set_nom($nom){
-        $this->_nom = $nom;
+    public function set_promotion($p){
+        $this->_promotion = $p;
     }
 
-    public function set_mot_de_passe($_mot_de_passe){
-        $this->_mot_de_passe = $_mot_de_passe;
+    public function set_nom($n){
+        $this->_nom = $n;
+    }
+
+    public function set_mot_de_passe($mdp){
+        $this->_mot_de_passe = $mdp;
     }
 }

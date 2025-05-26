@@ -4,13 +4,19 @@ USE espace_etudiant;
 
 CREATE TABLE users(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    ecole VARCHAR(50),
+    ecole INT,
+    promotion INT,
+    nom VARCHAR(255),
     mot_de_passe VARCHAR(100)
 );
 
-CREATE TABLE promotions(
+CREATE TABLE promotion(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255),
-    ecole VARCHAR(50),
-    mot_de_passe VARCHAR(100)
+    nom_promotion varchar(255)
+);
+
+CREATE TABLE ecole(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom_ecole varchar(255)
+
 );

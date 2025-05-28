@@ -2,16 +2,16 @@
 
 class Admin{
 
+    private $_promotion;
     private $_nom;
     private $_ecole;
-    private $_promotion;
     private $_mot_de_passe;
  
     
 
-    public function __construct($n,$e,$p,$mdp){
-        $this->set_nom($n);
+    public function __construct($p,$n,$e,$mdp){
         $this->set_promotion($p);
+        $this->set_nom($n);
         $this->set_ecole($e);
         $this->set_mot_de_passe($mdp);
     }

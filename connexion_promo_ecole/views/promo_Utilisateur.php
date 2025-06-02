@@ -4,27 +4,26 @@ if (filter_input(INPUT_POST, 'nom_ecole')) {
     $nom_promotion = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $mdp = filter_input(INPUT_POST, 'mot_de_passe', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $hashed_password = password_hash($mdp, PASSWORD_BCRYPT);
-    
 
-    
-    $this->creer_classe(new Promotion ($nom_ecole, $nom_promotion,$hashed_password));
-    // $this->creer_mdp(new Promotion ($nom_ecole, $nom_promotion,$mdp));
+    $this->afficher_nom_ecole(new Promotion ($nom_ecole));
 
+    $this->afficher_nom_classe(new Promotion($nom_promotion));
 
+    $this->verifier_mdp(new Promotion ($hashed_password));
 
 
 }
 ?>
 
-<h3>Connexion Admin</h3>
+<h3>Connexion Utilisateur</h3>
 <form method="POST">                                                                             
-    <select name="nom_ecole" id="ecole" >
+    <select name="id_ecole" id="ecole" >
         <option disabled selected>nom de l'ecole</option>
         <?php
-        foreach($this->afficher_ecole AS $e):
+        foreach($creer_ecole AS $e):
             ?>
         <option value="<?=$e['id']?>"><?=$e['nom_ecole']?></option>
-        <?php echo $e["id"]; endforeach; ?>
+        <?php endforeach; ?>
     </select>
     <br>
     <input type="text" name="nom" placeholder="Indiquer le nom de la classe">
@@ -33,4 +32,3 @@ if (filter_input(INPUT_POST, 'nom_ecole')) {
     <br>
     <input type="submit" value="Envoyer">
 </form>
-

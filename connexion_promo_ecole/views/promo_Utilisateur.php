@@ -9,12 +9,63 @@ if (filter_input(INPUT_POST, 'nom_ecole')) {
 
     $this->afficher_nom_classe(new Promotion($nom_promotion));
 
-    $this->verifier_mdp(new Promotion ($hashed_password));
-
+    $this->$resultat->verifier_mdp(new Promotion ($hashed_password));
 
 }
 ?>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+    }
 
+    h3 {
+        text-align: center;
+        background:rgb(210, 4, 252)
+    }
+
+    form {
+        background: white;
+        width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="file"],
+    
+    select {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid;
+        border-radius: 4px;
+    }
+
+    input[type="submit"]{
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    input[type="submit"]{
+        background-color:rgb(7, 3, 254);
+    }
+
+</style>
 <h3>Connexion Utilisateur</h3>
 <form method="POST">                                                                             
     <select name="id_ecole" id="ecole" >
@@ -32,3 +83,6 @@ if (filter_input(INPUT_POST, 'nom_ecole')) {
     <br>
     <input type="submit" value="Envoyer">
 </form>
+
+
+

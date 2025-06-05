@@ -2,6 +2,8 @@
 
 require_once 'model/model_Admin.php';
 require_once 'controller/Controlle_Promotion.class.php';
+require_once 'controller/Controlle_Fichier_rendu.class.php';
+
 
 class Controlle_Admin {
 
@@ -29,4 +31,14 @@ class Controlle_Admin {
 //         $this->model_Admin = new Model_Admin();
 //         return $this->model_Admin->creer_mdp($mdp->get_mdp());
 // }
+
+    public function deposer_fichier(Fichier_rendu $fichier) {
+    return $this->model_Admin->deposer_fichier(
+        $fichier->get_nom_fichier(),
+        $fichier->get_taille(),
+        $fichier->get_date_rendu(),
+        $fichier->get_id_promotion(),
+        $fichier->get_id_categorie(),
+    );
+}
 }

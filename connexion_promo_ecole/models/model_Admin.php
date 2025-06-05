@@ -34,4 +34,20 @@ class Model_Admin{
     //     $sql->bindParam(':mot_de_passe', $hashed_password);
     //     $sql->execute();
     // }
+
+
+    public function deposer_fichier($nom_fichier, $taille, $date_rendu, $id_promotion, $id_categorie) {
+        
+        
+        $sql = Database::$db->prepare("INSERT INTO fichier_rendu(nom_fichier, taille, date_rendu, id_promotion, id_categorie) VALUES (:nom_fichier, :taille, :date_rendu, :id_promotion, :id_categorie)");
+        
+        $sql->bindParam(':nom_fichier', $nom_fichier);
+        $sql->bindParam(':taille', $taille);
+        $sql->bindParam(':date_rendu', $date_rendu);
+        $sql->bindParam(':id_promotion', $id_promotion);
+        $sql->bindParam(':id_promotion', $id_promotion);
+        $sql->bindParam(':id_categorie', $id_categorie);
+
+        $sql->execute();
+    }
 }

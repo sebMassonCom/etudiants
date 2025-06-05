@@ -26,8 +26,12 @@ class Model_Utilisateur{
     }
 
     public function verifier_mdp($mdp){
-        $sql = Database::$_sql->query("SELECT * FROM promotion WHERE nom='$mdp' LIMIT 1");
+        $sql = Database::$db->query("SELECT * FROM promotion WHERE nom='$mdp' LIMIT 1");
         $sql->execute();
  
+    }
+    public function recup_dossier(){
+    return Database::$db->query("SELECT * FROM fichier_rendu GROUP BY id_promotion");
+    
     }
 }

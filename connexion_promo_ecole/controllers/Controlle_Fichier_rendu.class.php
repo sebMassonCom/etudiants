@@ -40,14 +40,12 @@ class Fichier_rendu {
 
     public function set_date_rendu($date_rendu){
     try {
-        $date = new DateTime($date_rendu);  
-        $date->modify('+2 hours');          
-        $this->_date_rendu = $date->format('Y-m-d H:i:s'); 
+        $date = new DateTime($date_rendu);           
+        $this->_date_rendu = $date->format('Y-m-d'); 
     } catch (Exception $e) {
         $this->_date_rendu = nulL; 
     }
 }
-
     public function get_id_promotion() {
         return $this->_id_promotion;
     }
@@ -63,7 +61,7 @@ class Fichier_rendu {
     public function set_id_categorie($id_categorie){
         $this->_id_categorie = $id_categorie;
     }
-}
+} 
 
 
 

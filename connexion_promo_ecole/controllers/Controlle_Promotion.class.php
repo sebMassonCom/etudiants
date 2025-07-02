@@ -15,7 +15,7 @@ class Promotion {
         return $this->_nom;
     }
 
-    public function set_nom($nom) {
+    private function set_nom($nom) {
         if (strlen($nom) < 3 || strlen($nom) > 40) {
             return;
         }
@@ -26,7 +26,7 @@ class Promotion {
         return $this->_ecole;
     }
 
-    public function set_ecole($ecole) {
+    private function set_ecole($ecole) {
         $this->_ecole = $ecole;
     }
 
@@ -34,10 +34,10 @@ class Promotion {
         return $this->_mdp;
     }
 
-    public function set_mdp($mdp) {
+    private function set_mdp($mdp) {
         if (strlen($mdp) < 5) { 
             return;
         }
         $this->_mdp = password_hash($mdp, PASSWORD_BCRYPT);
     }
-}
+} 

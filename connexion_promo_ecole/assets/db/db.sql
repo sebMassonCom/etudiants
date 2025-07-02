@@ -24,6 +24,7 @@ CREATE TABLE promotion(
     id_ecole INT,
     nom_promotion VARCHAR(255),
     mot_de_passe VARCHAR(100),
+    examen_actif BOOLEAN DEFAULT 0,
     FOREIGN KEY (id_ecole) REFERENCES ecole(id)
   
 );
@@ -32,4 +33,13 @@ CREATE TABLE ecole(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom_ecole varchar(255)
 
+);
+
+CREATE TABLE examen (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_promotion INT,
+    nom_fichier VARCHAR(255),
+    taille INT,
+    date_envoie DATETIME,
+    FOREIGN KEY (id_promotion) REFERENCES promotion(id)
 );
